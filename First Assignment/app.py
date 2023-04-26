@@ -1,6 +1,7 @@
 import os
 import yaml
 
+# Function which fetches the data from the YAML file.
 def getYamlData():
     try:
         with open("D:/Web/LightBeam.ai Assignment/First Assignment/config.yaml", "r") as f:
@@ -17,7 +18,7 @@ def getYamlData():
     except Exception as e:
         print(f"An error occurred: {e}")
 
-# function to add a new folder at a particular path in the directory tree
+# function for creating a new folder at a specific path in the directory tree
 def addFolder(path, folderName):
     newFolderPath = os.path.join(path, folderName)
     if not os.path.exists(newFolderPath):
@@ -26,7 +27,7 @@ def addFolder(path, folderName):
     else:
         print(f"Folder {folderName} already exists at {path}")
 
-# function to remove a folder from a particular path in the directory tree
+# function to remove a folder from a specific path in the directory tree
 def removeFolder(path, folderName):
     folderPath = os.path.join(path, folderName)
     if os.path.exists(folderPath):
@@ -36,7 +37,7 @@ def removeFolder(path, folderName):
         print(f"Folder {folderName} does not exist at {path}")
 
 
-# function to fetch the path of the given folder and all folders with the same name in subfolders
+# function that returns the path of the specified folder as well as all subfolders with the same name.
 def fetchFolderPath(rootPath, folderName):
     folderPaths = []
     for path, dirs, files in os.walk(rootPath):
@@ -73,6 +74,7 @@ def printDirectoryStructure(path):
 # Main function
 def main():
 
+    # Getting the path from the getYamlData function
     rootPath = getYamlData()
 
     if rootPath is None:

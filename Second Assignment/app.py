@@ -5,13 +5,12 @@ import argparse
 # Using the ARGPARSE module for the command line parsing
 parser = argparse.ArgumentParser(description='How to use this Program - Sample input "python filename.py Operation to be performed Path of the directory"')
 parser.add_argument('arg1', help='Please enter the operation you want to perform on the directory such as add, remove, fetch, update, print')
-parser.add_argument('folderPath', help='Path of the directory on which you want to perform operation the path should be conclosed in double quotes')
+parser.add_argument('folderPath', help='Path of the directory on which you want to perform operation the path should be enclosed in double quotes')
 
 args = parser.parse_args()
 
-# For various operations seperate function is defined
 
-# function to add a new folder at a particular path in the directory tree
+# function for creating a new folder at a specific path in the directory tree
 def addFolder(path, folderName):
     newFolderPath = os.path.join(path, folderName)
     if not os.path.exists(newFolderPath):
@@ -20,7 +19,7 @@ def addFolder(path, folderName):
     else:
         print(f"Folder {folderName} already exists at {path}")
 
-# function to remove a folder from a particular path in the directory tree
+# function to remove a folder from a specific path in the directory tree
 def removeFolder(path, folderName):
     folderPath = os.path.join(path, folderName)
     if os.path.exists(folderPath):
@@ -30,7 +29,7 @@ def removeFolder(path, folderName):
         print(f"Folder {folderName} does not exist at {path}")
 
 
-# function to fetch the path of the given folder and all folders with the same name in subfolders
+# function that returns the path of the specified folder as well as all subfolders with the same name.
 def fetchFolderPath(rootPath, folderName):
     folderPaths = []
     for path, dirs, files in os.walk(rootPath):
@@ -40,8 +39,6 @@ def fetchFolderPath(rootPath, folderName):
             if dir.startswith(folderName):
                 folderPaths.extend(fetchFolderPath(os.path.join(path, dir), folderName))
     return folderPaths
-
-
 
 
 # function to update the name of the folder
