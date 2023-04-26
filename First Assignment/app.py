@@ -28,11 +28,18 @@ def addFolder(path, folderName):
         print(f"Folder {folderName} already exists at {path}")
 
 # function to remove a folder from a specific path in the directory tree
-def removeFolder(path, folderName):
+def removeFolders(path, folderName):
     folderPath = os.path.join(path, folderName)
+    # Check if the folder exists
     if os.path.exists(folderPath):
+        for ele in os.listdir(folderPath):
+            elePath = os.path.join(folderPath, ele)
+            if os.path.isdir(elePath):
+                removeFolders(folderPath, ele)
+            else:
+                os.remove(elePath)
         os.rmdir(folderPath)
-        print(f"Folder {folderName} removed from {path}")
+        print(f"Folder {folderName} and all its sub-folders have been removed from {path}")
     else:
         print(f"Folder {folderName} does not exist at {path}")
 
@@ -91,7 +98,7 @@ def main():
                 addFolder(rootPath, folderName)
             elif operation == "remove":
                 folderName = input("Enter the folder name to be removed: ")
-                removeFolder(rootPath, folderName)
+                removeFolders(rootPath, folderName)
             elif operation == "fetch":
                 folderName = input("Enter the folder name to be fetched: ")
                 folderPaths = fetchFolderPath(rootPath, folderName)

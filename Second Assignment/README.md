@@ -36,7 +36,7 @@
 
 * Explanation of the above command: a) app.py is the file name where the code resides
 
-                                 b) "print": It specifies the operation to be performed by the programme.
+                                 b) "print": It specifies the operation to be performed on the directory.
 
                                     There are five types of operations that can be performed.
                                                i) add
