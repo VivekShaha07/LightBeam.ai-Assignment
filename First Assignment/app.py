@@ -91,9 +91,9 @@ def main():
 
         operation = ""
 
-        while(operation != "quit" or operation != "Quit" or operation != "QUIT" or operation != "q" or operation != "Q"):
+        while(operation != "quit" or operation != "q"):
             operation1 = input("Enter the operation to perform (add, remove, fetch, update, print): ")
-            operation = operation1.strip()
+            operation = operation1.lower().strip()
             if operation == "add":
                 folderName = input("Enter the folder name to be added: ")
                 addFolder(rootPath, folderName)
