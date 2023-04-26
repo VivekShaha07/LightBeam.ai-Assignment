@@ -1,5 +1,6 @@
 import os
 import yaml
+import sys
 
 # Function which fetches the data from the YAML file.
 def getYamlData():
@@ -115,7 +116,9 @@ def main():
             elif operation == "print":
                 printDirectoryStructure(rootPath)
             else:
-                print("Invalid operation entered. Please try again.")
+                print("Program terminated successfully!")
+                sys.exit()
+            
     else:
         print("Invalid path provided please add a the correct path in Yaml file")
             

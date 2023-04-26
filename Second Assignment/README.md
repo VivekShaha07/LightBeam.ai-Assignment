@@ -36,18 +36,18 @@
 
 * Explanation of the above command: a) app.py is the file name where the code resides
 
-                                 b) "print": It specifies the operation to be performed on the directory.
+  b) "print": It specifies the operation to be performed on the directory.
 
-                                    There are five types of operations that can be performed.
-                                               i) add
-                                               ii) remove
-                                               iii) fetch
-                                               iv) update
-                                               v) print
+  There are five types of operations that can be performed.
+    i) add
+    ii) remove
+    iii) fetch
+    iv) update
+    v) print
 
-                                 c) Path of the directory : The path to the folder in which you want to conduct certain operations. Always specific the path in double quote
+  c) Path of the directory : The path to the folder in which you want to conduct certain operations. Always specific the path in double quote
 
-* Few sample command which would help the user to get a better understanding
+* Few sample command which would help the user for giving input as per the format given in step number 3.
     1) python app.py add "D:\Web\LightBeam.ai Assignment\Second Assignment"
     2) python app.py remove "D:\Web\LightBeam.ai Assignment\Second Assignment"
     3) python app.py fetch "D:\Web\LightBeam.ai Assignment\Second Assignment"
