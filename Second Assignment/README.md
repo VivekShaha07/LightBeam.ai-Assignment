@@ -1,4 +1,4 @@
-# Assignment 1:  Write a program that does flowing operations on a directory tree.
+# Assignment 2:  Write a program that does flowing operations on a directory tree.
 **a. Add a new folder at a particular path in the directory tree.**
 **b. Removed a folder from a particular path in the directory tree.**
 **c. Fetch the path of the given folder.**
